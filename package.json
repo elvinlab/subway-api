@@ -1,16 +1,17 @@
 {
-  "name": "subway-api",
+  "name": "subway-mini-project",
   "version": "1.0.0",
   "description": "API Rest nodeJS para la investigacion y proyecto de \"Fundamentos Web ll ciclo-UNA 2020\". Proyecto realizado por Edris Rios y Elvin Gonzalez ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Edris Rios y Elvin Gonzalez",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-multiparty": "^2.2.0",
     "express": "^4.17.1",
@@ -18,6 +19,7 @@
     "moment": "^2.27.0",
     "mongoose": "^5.10.0",
     "mongoose-paginate-v2": "^1.3.9",
+    "request": "^2.88.2",
     "validator": "^13.1.1"
   },
   "devDependencies": {

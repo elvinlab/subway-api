@@ -3,6 +3,8 @@
 //Requires
 var express = require('express');
 var bodyParser = require('body-parser'); //convertir peticiones a objs javaScript
+const http = require('http');
+require('./database');
 
 //Ejecutar express
 var app = express();
@@ -33,6 +35,22 @@ app.use('/api', category_router);
 app.use('/api', price_router);
 app.use('/api', subway_router);
 app.use('/api', sale_router);
+
+/**
+ * Get port from environment and store in Express.
+ */
+const port = process.env.PORT || '3000';
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+const server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port, () => console.log(`API running on localhost:${port}`));
 
 //Expresar modulos
 module.exports = app; //exportar a manera global

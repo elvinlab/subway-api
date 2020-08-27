@@ -1,0 +1,16 @@
+version: '3' # Version de docker-composer
+
+services: # Servicios (container o imagenes de docker) a ofrecer
+  express: #En este caso express
+    container_name: subway-api
+    build: . # el punto significa que va dokerizar toda la raiz del proyecto
+    ports:
+      - "3000:3000" #Port de express.js
+    links: #Likiamos la express con mongoDB
+      - database # 'mongodb://database/subway_db'....
+
+  database: #Ocupamos la imagen de mongo 
+    container_name: subway_db
+    image: mongo 
+    ports:
+      - "27017:27017" #Port de mongoDB

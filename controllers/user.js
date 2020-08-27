@@ -1,7 +1,7 @@
 'use strict'
 
 var validator = require('validator');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var User = require('../models/user');
 var jwt = require('../services/jwt');
 var path = require('path');
