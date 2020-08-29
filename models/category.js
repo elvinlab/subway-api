@@ -14,4 +14,3 @@ var CategorySchema = Schema({
 // Cargar paginacion
 CategorySchema.plugin(mongoosePaginate);
 module. exports = mongoose.model('Category', CategorySchema);
-//algo mas
