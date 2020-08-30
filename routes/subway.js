@@ -11,7 +11,7 @@ var md_upload = multipart({ uploadDir: './uploads/subways' })
 
 router.get('/test', SubwayController.test);
 router.post('/subway', md_auth.authenticated, SubwayController.save);
-router.get('/subways/:page?', md_auth.authenticated, SubwayController.getSubways);
+router.get('/subways/:page?', SubwayController.getSubways);
 router.get('/user-subways/:user', md_auth.authenticated, SubwayController.getSubwaysByUser);
 router.get('/subway/:id', md_auth.authenticated, SubwayController.getSubway);
 router.put('/subway/:id', md_auth.authenticated, SubwayController.update);
